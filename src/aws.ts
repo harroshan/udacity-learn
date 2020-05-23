@@ -9,13 +9,11 @@ AWS.config.credentials = credentials;
 AWS.config.update({accessKeyId: c.aws_key_id, secretAccessKey: c.aws_secret_key});
 AWS.config.region = 'ap-south-1';
 
-// export const s3 = new AWS.S3({
-//   signatureVersion: 'v4',
-//   region: c.aws_region,
-//   params: {Bucket: c.aws_media_bucket}
-// });
-
-const s3 = new AWS.S3();
+export const s3 = new AWS.S3({
+  signatureVersion: 'v4',
+  region: c.aws_region,
+  params: {Bucket: c.aws_media_bucket}
+});
 
 
 /* getGetSignedUrl generates an aws signed url to retreive an item

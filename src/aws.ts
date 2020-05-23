@@ -8,6 +8,8 @@ var credentials = new AWS.SharedIniFileCredentials({profile: c.aws_profile });
 AWS.config.credentials = credentials;
 
 export const s3 = new AWS.S3({
+  accessKeyId: config.dev.aws_key_id,
+  secretAccessKey: config.dev.aws_secret_key,
   signatureVersion: 'v4',
   region: c.aws_region,
   params: {Bucket: c.aws_media_bucket}

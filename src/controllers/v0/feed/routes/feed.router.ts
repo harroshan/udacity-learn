@@ -37,6 +37,14 @@ router.patch('/:id',
         res.send(500).send("not implemented")
 });
 
+router.get("/test", async(req: Request, res: Response) => {
+    async (req: Request, res: Response) => {
+        let { fileName } = req.params;
+        const url = AWS.getPutSignedUrl(fileName);
+    
+        res.status(201).send({url: url});
+    }
+})
 
 // Get a signed url to put a new item in the bucket
 router.get('/signed-url/:fileName', 
@@ -44,7 +52,7 @@ router.get('/signed-url/:fileName',
     async (req: Request, res: Response) => {
     let { fileName } = req.params;
     const url = AWS.getPutSignedUrl(fileName);
-    
+
     res.status(201).send({url: url});
 });
 

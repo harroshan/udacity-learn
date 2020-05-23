@@ -38,7 +38,7 @@ router.patch('/:id',
 });
 
 // Get a signed url to put a new item in the bucket
-router.get('/sign-url/:fileName', 
+router.get('/signedUrl/:fileName', 
     requireAuth, 
     async (req: Request, res: Response) => {
     let { fileName } = req.params;

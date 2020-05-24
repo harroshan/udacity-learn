@@ -6,8 +6,8 @@ const c = config.dev;
 //Configure AWS
 var credentials = new AWS.SharedIniFileCredentials({profile: c.aws_profile });
 AWS.config.credentials = credentials;
-AWS.config.update({accessKeyId: c.aws_key_id, secretAccessKey: c.aws_secret_key});
-AWS.config.region = 'ap-south-1';
+// AWS.config.update({accessKeyId: c.aws_key_id, secretAccessKey: c.aws_secret_key});
+// AWS.config.region = 'ap-south-1';
 
 export const s3 = new AWS.S3({
   signatureVersion: 'v4',
